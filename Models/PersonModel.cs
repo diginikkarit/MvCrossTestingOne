@@ -8,6 +8,7 @@ namespace MvCrossTestingOne.Core.Models
     {
         //Tähän tulee kommentti.
         //Lissää kommnettia.
+        //joo
         public string FirstName { get; set; }
         public string LastName { get; set; }
     }

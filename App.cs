@@ -1,6 +1,7 @@
 ﻿using MvCrossTestingOne.Core.ViewModels;
 using MvvmCross.ViewModels;
-using System;
+using MvvmCross;
+using MvCrossTestingOne.Core.Services;
 using System.Collections.Generic;
 using System.Text;
 
@@ -10,7 +11,14 @@ namespace MvCrossTestingOne.Core
     {
         public override void Initialize()
         {
-            RegisterAppStart<GuestBookViewModel>();
+            //When interface is registered here. It will create a new StringMonster class
+            //When ever IStringMonster is needed in constructor. Chekck TestViewModel.
+            Mvx.IoCProvider.RegisterType<IStringMonster, StringMonster>();
+
+            //RegisterAppStart<TestTwoViewModel>();
+            RegisterAppStart<TestThreeViewModel>();
+
+            RegisterAppStart<NavigationWindowViewModel>();
         }
     }
 }

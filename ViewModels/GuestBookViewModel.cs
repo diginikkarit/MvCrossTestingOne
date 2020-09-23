@@ -31,38 +31,11 @@ namespace MvCrossTestingOne.Core.ViewModels
 			People.Add(p);
 
 			Debug.WriteLine("Clikked add button : ");
-			Debug.WriteLine($"Added : {p.FirstName} {p.LastName}");
-			Debug.WriteLine("Eka ilmoitus", "Oma Ilmoitus");
-			Debug.WriteLine("Joku toinen ilmoitus", "Oma Ilmoitus");
-
-			Debug.WriteLineIf(p.FirstName == "Jorma", "Oli kyllä Jorma");
 		}
 
 		public bool AddGuestButtonEnabled => FirstName?.Length > 0 && LastName?.Length > 0;
 
-		public bool CanAddGuest()
-		{
-			string hoopo;
-
-			if(!String.IsNullOrEmpty(FirstName) || !String.IsNullOrEmpty(LastName))
-			{
-				if(FirstName.Length > 0 && LastName.Length >0)
-				{
-					return true;
-				}
-				else
-				{
-					return false;
-				}
-			}
-			else
-			{
-				// ""
-				return false;
-			}
-
-		}
-
+		
 		private ObservableCollection<PersonModel> _people = new ObservableCollection<PersonModel>();
 		
 		public ObservableCollection<PersonModel> People
